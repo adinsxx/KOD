@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "SheetPreview"
+  name: "SheetPreview",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 

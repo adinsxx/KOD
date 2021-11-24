@@ -1,11 +1,13 @@
-<!--WILL ALSO INCLUDE LEVELING-->
 <template>
 
 </template>
 
 <script>
 export default {
-  name: "AbilityScores"
+  name: "Description",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 

@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "KnownSpells"
+  name: "Proficiencies",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 

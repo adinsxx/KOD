@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "Background"
+  name: "KnownSpells",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 

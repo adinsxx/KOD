@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "Description"
+  name: "Race",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 

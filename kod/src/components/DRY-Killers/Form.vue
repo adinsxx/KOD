@@ -1,5 +1,10 @@
 <template>
-
+<div class="form">
+  <b-form>
+    <b-form-select>
+    </b-form-select>
+  </b-form>
+</div>
 </template>
 
 <script>

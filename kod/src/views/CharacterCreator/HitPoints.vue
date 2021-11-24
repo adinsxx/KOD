@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "Class"
+  name: "HitPoints",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 

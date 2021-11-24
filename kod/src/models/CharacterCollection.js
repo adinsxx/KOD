@@ -1,21 +1,22 @@
 //Defines what can be done to character sheets
 //Only works at the USER level
-function CharacterCollection(){
-  let arr = [];
-
-  arr.addCharacter = function(item){
+const CharacterCollection = function(arr){
+  if (!Array.isArray(arr)) {
+    arr = [];
+  }
+  arr.add = function(csheet){
     this.push(
       new CharacterSheet(
-        item,
+        csheet,
         ((collection) => function (){
-          collection.removeCharacter(this)
+          collection.remove(this)
         })(this)
       )
     );
     return this;
   }
-  arr.removeCharacter = function(item){
-    this.splice(this.indexOf(item), 1);
+  arr.remove = function(csheet){
+    this.splice(this.indexOf(csheet), 1);
     return this;
   }
   return arr;

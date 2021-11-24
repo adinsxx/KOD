@@ -1,5 +1,7 @@
 <template>
-
+<div class="list">
+  <b-list-group-item></b-list-group-item>
+</div>
 </template>
 
 <script>

@@ -4,7 +4,10 @@
 
 <script>
 export default {
-  name: "Proficiencies"
+  name: "Equipment",
+  props:{
+    newCharacterSheet: Object
+  }
 }
 </script>
 
