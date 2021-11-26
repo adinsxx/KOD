@@ -12,47 +12,47 @@ export default {
       items: [
         {
           text: 'Race',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Class',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Background',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Level & Ability Scores',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Proficiencies',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Options',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Hit points',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Known Spells',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Equipment',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Description',
-          href: '#'
+          to: '#'
         },
         {
           text: 'Sheet Preview',
-          href: '#'
+          to: '#'
         }
       ]
     }

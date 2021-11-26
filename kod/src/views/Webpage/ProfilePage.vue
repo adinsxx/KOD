@@ -1,13 +1,10 @@
 <template>
-
+<div></div>
 </template>
 
 <script>
 export default {
-  name: "HitPoints",
-  props:{
-    newCharacterSheet: Object
-  }
+  name: "ProfilePage"
 }
 </script>
 

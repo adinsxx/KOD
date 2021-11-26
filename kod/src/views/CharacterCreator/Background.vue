@@ -1,12 +1,14 @@
 <template>
-
+<breadcrumbs></breadcrumbs>
 </template>
 
 <script>
 import axios from "axios";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default {
   name: "Background",
+  components: {Breadcrumbs},
   props:{
     newCharacterSheet: Object
   },
