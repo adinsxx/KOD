@@ -12,47 +12,44 @@ export default {
       items: [
         {
           text: 'Race',
-          to: '#'
+          to: {name: 'Race'}
         },
         {
           text: 'Class',
-          to: '#'
+          to: {name: 'Class'}
         },
         {
           text: 'Background',
-          to: '#'
+          to: {name: 'Background'}
         },
         {
           text: 'Level & Ability Scores',
-          to: '#'
+          to: {name: 'AbilityScores'}
         },
         {
           text: 'Proficiencies',
-          to: '#'
+          to: {name: 'Proficiencies'}
         },
         {
           text: 'Options',
-          to: '#'
-        },
-        {
-          text: 'Hit points',
-          to: '#'
+          to: {name: 'Options'}
         },
         {
           text: 'Known Spells',
-          to: '#'
+          to: {name: 'Spells'}
         },
         {
           text: 'Equipment',
-          to: '#'
+          to: {name: 'Equipment'}
         },
         {
           text: 'Description',
-          to: '#'
+          to: {name: 'Description'}
         },
         {
           text: 'Sheet Preview',
-          to: '#'
+          to: {name: 'SheetPreview'}
+
         }
       ]
     }
