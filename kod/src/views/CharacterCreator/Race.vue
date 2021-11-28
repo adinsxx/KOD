@@ -7,9 +7,11 @@ import axios from "axios";
 
 export default {
   name: "Race",
-  data: {
+  data: function() {
+return {
 
-  },
+  };
+},
   props:{
     newCharacterSheet: Object
   },
