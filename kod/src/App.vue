@@ -13,12 +13,12 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  text-align: right;
 }
 
+/*top right bottom left*/
 #nav {
-  padding: 30px;
+  padding: 30px 30px 0px ;
 }
 
 #nav a {
@@ -26,9 +26,9 @@
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+/*#nav a.router-link-exact-active {*/
+/*  color: #42b983;*/
+/*}*/
 </style>
 <script>
 import CharacterSheet from "./models/CharacterSheet";

@@ -1,8 +1,14 @@
 <template>
-  <div class="homepage">
-    <h1>King Of Diamonds</h1>
+  <div id="homepage">
+    <img src="../../assets/King_of_Diamonds-removebg-preview.png">
   </div>
 </template>
+
+<style>
+  #homepage {
+    text-align: center;
+  }
+</style>
 
 <script>
 export default {
