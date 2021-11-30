@@ -14,6 +14,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: right;
+  text-decoration: none;
+
 }
 
 /*top right bottom left*/
