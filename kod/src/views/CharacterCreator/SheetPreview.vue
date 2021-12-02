@@ -1,5 +1,17 @@
 <template>
-<div></div>
+<div>
+  <input v-model="newCharacterSheet.name">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+  <input v-model="newCharacterSheet.className">
+
+</div>
 </template>
 
 <script>

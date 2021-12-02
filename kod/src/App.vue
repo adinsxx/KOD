@@ -6,6 +6,7 @@
 <!--    </div>-->
     <router-view :new-character-sheet="newCharacterSheet"/>
   </div>
+
 </template>
 
 <style>
