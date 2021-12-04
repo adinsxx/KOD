@@ -5,6 +5,7 @@
     <!--      <router-link to="/login">Login</router-link>-->
     <!--    </div>-->
     <router-view :new-character-sheet="newCharacterSheet"/>
+
   </div>
 
 </template>
@@ -21,4 +22,3 @@ export default {
   }
 }
 </script>
-<!--every page needs prop of newCharacterSheet-->
