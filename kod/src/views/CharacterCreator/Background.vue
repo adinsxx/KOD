@@ -1,14 +1,23 @@
 <template>
-<breadcrumbs></breadcrumbs>
+  <div>
+    <breadcrumbs></breadcrumbs>
+    <user-input></user-input>
+    <user-select></user-select>
+
+  </div>
+
 </template>
 
 <script>
 import axios from "axios";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import UserInput from "../../components/DRY-Killers/UserInput";
+import UserSelect from "../../components/DRY-Killers/UserSelect";
+
 
 export default {
   name: "Background",
-  components: {Breadcrumbs},
+  components: {UserSelect, UserInput, Breadcrumbs},
   props:{
     newCharacterSheet: Object
   },

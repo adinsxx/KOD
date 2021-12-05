@@ -1,12 +1,19 @@
 <template>
-  <div></div>
+<div>
+  <breadcrumbs></breadcrumbs>
+  <user-select></user-select>
+</div>
 </template>
 
 <script>
 
 
+import UserSelect from "../../components/DRY-Killers/UserSelect";
+import Breadcrumbs from "../../components/Breadcrumbs";
+
 export default {
   name: "Race",
+  components: {UserSelect, Breadcrumbs},
   props:{
     newCharacterSheet: Object
   },
@@ -19,7 +26,10 @@ export default {
   //   axios:get('https://www.dnd5eapi.co/api/race/')
   //       .then(response => (this.info = response.data.bpi))
   // },
-  mounted: function(){}
+  mounted: function(){},
+  data: () => ({
+    items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+  }),
 }
 </script>
 
