@@ -11,8 +11,8 @@
 <script>
 import axios from "axios";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import UserInput from "../../components/DRY-Killers/UserInput";
-import UserSelect from "../../components/DRY-Killers/UserSelect";
+import UserInput from "../../components/DRY-Killers/UserSelect";
+import UserSelect from "../../components/DRY-Killers/UserInput";
 
 
 export default {

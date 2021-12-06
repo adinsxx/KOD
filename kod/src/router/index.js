@@ -96,7 +96,7 @@ const routes = [
     path: '/character-creator/sheet-preview',
     name: 'SheetPreview',
     component: SheetPreview,
-  }
+  },
 
 ]
 

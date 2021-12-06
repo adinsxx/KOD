@@ -1,19 +1,22 @@
 <template>
-<div class="list">
-  <div>
-    <v-text-field
-        label="Main input"
-        :rules="rules"
-        hide-details="auto"
-    ></v-text-field>
-    <v-text-field label="Another input"></v-text-field>
-  </div>
+<div class="select">
+  <v-col>
+  <v-select
+      :items="items"
+      label="Outlined style"
+      outlined
+  ></v-select>
+  </v-col>
 </div>
 </template>
 
 <script>
 export default {
-  name: "UserSelect"
+  name: "UserInput",
+  data: () => ({
+    items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+  }),
+
 }
 </script>
 

@@ -34,34 +34,41 @@
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title>
+              <router-link to="/" class="text-decoration-none">
+                Home
+              </router-link>
+            </v-list-item-title>
+
           </v-list-item>
 
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-account</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
+            <v-list-item-title>
+              <router-link to="/profile" class="text-decoration-none">
+                Profile
+              </router-link>
+            </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
 
-<!--    https://stackoverflow.com/questions/59415526/vuetify-v-carousel-arrows-overlapping-problem-->
+    <!--    https://stackoverflow.com/questions/59415526/vuetify-v-carousel-arrows-overlapping-problem-->
 
     <v-app>
-    <v-carousel height="800" hide-delimiters>
-
-      <v-carousel-item
-          v-for="(item,i) in items"
-          :key="i"
-          :src="item.src"
-      ></v-carousel-item>
-    </v-carousel>
+      <v-carousel cycle height="800" hide-delimiters>
+        <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+        >
+          <router-link to="/character-creator/race" class="text-decoration-none">Build your character</router-link>
+        </v-carousel-item>
+      </v-carousel>
     </v-app>
-
-
-    <router-link to="/character-creator/race" class="text-decoration-none">Build your character</router-link>
     <b-card-footer>
       Its a footer
     </b-card-footer>
