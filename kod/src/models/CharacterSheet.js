@@ -36,8 +36,22 @@ function CharacterSheet(name,className, subclassName, race, subrace, background,
 
 CharacterSheet.collectionName = 'sheets';
 
-// CharacterSheet.fromFirestore = function (snapshot,){
-//
-// }
+CharacterSheet.fromFirestore = function (snapshot, option){
+  const data = snapshot.data(option);
+  return new CharacterSheet(
+      data.name,
+      data.className,
+      data.subclassName,
+      data.race,
+      data.subrace,
+      data.background,
+      data.abilityScores,
+      data.proficiences,
+      data.options,
+      data.spells,
+      data.equipment,
+      data.description
+  );
+}
 
 export default CharacterSheet;
