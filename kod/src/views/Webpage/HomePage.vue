@@ -65,14 +65,17 @@
             :key="i"
             :src="item.src"
         >
-          <router-link to="/character-creator/race" class="text-decoration-none">Build your character</router-link>
         </v-carousel-item>
       </v-carousel>
     </v-app>
+
+    <v-img class="logo" src="@/assets/King_of_Diamonds-removebg-preview.png"/>
+
+    <v-btn id="abutton" to="/character-creator/race" class="text-decoration-none">Build your character</v-btn>
+    <v-btn id="bbutton" to="/login" class="text-decoration-none" @click="signInUser">Login</v-btn>
     <b-card-footer>
       Its a footer
     </b-card-footer>
-
 
   </div>
 
@@ -83,8 +86,8 @@
 
 .logo {
   position: absolute;
-  top: 50px;
-  width: 96.66666666666666%;
+  bottom: 200px;
+  left: 500px;
 }
 #homepage {
   text-align: center;
@@ -95,12 +98,33 @@ img {
   width: auto;
 }
 
+#abutton{
+  position: absolute;
+  bottom: 45px;
+  left: 575px;
+  opacity: 75%;
+}
+
+#bbutton{
+  position: absolute;
+  bottom: 45px;
+  left: 825px;
+  opacity: 75%;
+
+}
+
 
 </style>
 
 <script>
+
+import {auth} from "../../firebase/firebase";
+
 export default {
   name: "HomePage",
+  props: {
+    authUser: Object
+  },
   data: () => ({
     slide: 0,
     sliding: null,
@@ -118,8 +142,24 @@ export default {
       }
 
 
-    ]
+    ],
+    email: '',
+    password: '',
 
   }),
+
+  methods: {
+    signInUser(){
+      auth.signInWithEmailAndPassword(this.email, this.password).then(
+          () => {
+            this.$router.push('/')
+          },
+          err => {
+            alert(`Error - ${err.message}`)
+          }
+
+      )
+    }
+  }
 }
 </script>

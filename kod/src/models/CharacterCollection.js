@@ -1,5 +1,6 @@
 //Defines what can be done to character sheets
 //Only works at the USER level
+const CharacterSheet = require("./CharacterSheet");
 const CharacterCollection = function(arr){
   if (!Array.isArray(arr)) {
     arr = [];
@@ -21,5 +22,4 @@ const CharacterCollection = function(arr){
   }
   return arr;
 
-  //TODO: add editing functionality
 }

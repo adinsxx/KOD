@@ -1,7 +1,8 @@
 <template>
 <div>
   <breadcrumbs></breadcrumbs>
-  <user-select></user-select>
+  <user-select v-model="races">
+  </user-select>
 </div>
 </template>
 
@@ -13,23 +14,14 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default {
   name: "Race",
+  data: () => ({
+    races: [],
+  }),
   components: {UserSelect, Breadcrumbs},
   props:{
-    newCharacterSheet: Object
-  },
-  methods: {
-    getRaces(){
-      if(this.raceSearch){
-        this.raceResults = new RaceCollection();
-      }
-    },
-    axios:get('https://www.dnd5eapi.co/api/race/')
-        .then(response => (this.info = response.data.bpi))
-  },
-  mounted: function(){},
-  data: () => ({
-    items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
-  }),
+    newCharacterSheet: Object,
+},
+
 }
 </script>
 

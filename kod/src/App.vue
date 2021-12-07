@@ -4,21 +4,40 @@
     <!--      <router-link to="/">Home</router-link> |-->
     <!--      <router-link to="/login">Login</router-link>-->
     <!--    </div>-->
-    <router-view :new-character-sheet="newCharacterSheet"/>
+    <router-view :authUser="authUser" :new-character-sheet="newCharacterSheet"/>
 
   </div>
 
 </template>
 
+<style>
+#app {
+
+}
+
+</style>
 
 <script>
+import {auth} from "./firebase/firebase"
 import CharacterSheet from "./models/CharacterSheet";
 export default {
   name: 'App',
   data() {
     return {
+      authUser: {uid: ''},
       newCharacterSheet: new CharacterSheet()
     }
+  },
+
+  created(){
+    auth.onAuthStateChanged(user => {
+      if(user){
+        this.authUser = user
+      } else {
+        this.authUser = {uid: ''}
+      }
+
+    })
   }
 }
 </script>
