@@ -1,8 +1,12 @@
 <template>
 <div>
   <breadcrumbs></breadcrumbs>
-  <user-select v-model="races">
-  </user-select>
+  <user-select
+               :items="RaceData"
+               item-text="name"
+               item-value="Races"
+
+  ></user-select>
 </div>
 </template>
 
@@ -11,11 +15,15 @@
 
 import UserSelect from "../../components/DRY-Killers/UserSelect";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import RaceData from "../../assets/JSON/races.json"
 
 export default {
+
   name: "Race",
   data: () => ({
-    races: [],
+    RaceData: RaceData,
+    race: '',
+    subRace: '',
   }),
   components: {UserSelect, Breadcrumbs},
   props:{

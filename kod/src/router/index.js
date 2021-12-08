@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomePage from "../views/Webpage/HomePage";
-import LoginPage from "../views/Webpage/LoginPage";
 import ProfilePage from "../views/Webpage/ProfilePage";
 import ResourceWiki from "../views/Webpage/ResourceWiki";
 import Race from "../views/CharacterCreator/Race";
@@ -22,15 +21,6 @@ const routes = [
     path: '/',
     name: 'HomePage',
     component: HomePage,
-  },
-  {
-    path: '/login',
-    name: 'LoginPage',
-    component: LoginPage,
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-
   },
   {
     path: '/profile',

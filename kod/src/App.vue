@@ -1,21 +1,17 @@
 <template>
-  <div id="app">
+  <div id="app"  class="container--fluid">
     <!--    <div id="nav">-->
     <!--      <router-link to="/">Home</router-link> |-->
     <!--      <router-link to="/login">Login</router-link>-->
     <!--    </div>-->
     <router-view :authUser="authUser" :new-character-sheet="newCharacterSheet"/>
 
+
   </div>
 
 </template>
 
-<style>
-#app {
 
-}
-
-</style>
 
 <script>
 import {auth} from "./firebase/firebase"
@@ -29,7 +25,7 @@ export default {
     }
   },
 
-  created(){
+  created: function(){
     auth.onAuthStateChanged(user => {
       if(user){
         this.authUser = user
@@ -41,3 +37,12 @@ export default {
   }
 }
 </script>
+
+<style>
+#app{
+
+
+}
+
+
+</style>

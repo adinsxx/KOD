@@ -1,5 +1,6 @@
 <template>
   <div id="homepage">
+
     <!--    <b-navbar toggleable="sm" type="dark" variant="dark">-->
     <!--      <b-collapse id="nav-text-collapse" is-nav>-->
     <!--        <b-nav fill>-->
@@ -9,8 +10,6 @@
     <!--      </b-collapse>-->
     <!--    </b-navbar>-->
     <v-app-bar
-        color="deep-purple"
-        dark
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
@@ -56,9 +55,13 @@
       </v-list>
     </v-navigation-drawer>
 
+
+
     <!--    https://stackoverflow.com/questions/59415526/vuetify-v-carousel-arrows-overlapping-problem-->
 
+    <!--    Carousel-->
     <v-app>
+
       <v-carousel cycle height="800" hide-delimiters>
         <v-carousel-item
             v-for="(item,i) in items"
@@ -66,13 +69,15 @@
             :src="item.src"
         >
         </v-carousel-item>
+
       </v-carousel>
     </v-app>
+    <!--  buttons-->
 
-    <v-img class="logo" src="@/assets/King_of_Diamonds-removebg-preview.png"/>
+    <login-page auth-user="authUser"></login-page>
 
-    <v-btn id="abutton" to="/character-creator/race" class="text-decoration-none">Build your character</v-btn>
-    <v-btn id="bbutton" to="/login" class="text-decoration-none" @click="signInUser">Login</v-btn>
+
+
     <b-card-footer>
       Its a footer
     </b-card-footer>
@@ -81,50 +86,33 @@
 
 
 </template>
-
 <style scoped>
 
-.logo {
-  position: absolute;
-  bottom: 200px;
-  left: 500px;
-}
 #homepage {
   text-align: center;
+
+  background-color: white;
 }
 
-img {
-  max-height: 100%;
-  width: auto;
-}
 
-#abutton{
-  position: absolute;
-  bottom: 45px;
-  left: 575px;
-  opacity: 75%;
-}
 
-#bbutton{
-  position: absolute;
-  bottom: 45px;
-  left: 825px;
-  opacity: 75%;
 
-}
+
 
 
 </style>
 
+
 <script>
 
-import {auth} from "../../firebase/firebase";
+import LoginPage from "./LoginPage";
 
 export default {
   name: "HomePage",
-  props: {
-    authUser: Object
+  components:{
+    LoginPage,
   },
+
   data: () => ({
     slide: 0,
     sliding: null,
@@ -145,21 +133,14 @@ export default {
     ],
     email: '',
     password: '',
+    absolute: true,
+    opacity: 0,
+    overlay: true,
+
 
   }),
 
-  methods: {
-    signInUser(){
-      auth.signInWithEmailAndPassword(this.email, this.password).then(
-          () => {
-            this.$router.push('/')
-          },
-          err => {
-            alert(`Error - ${err.message}`)
-          }
 
-      )
-    }
-  }
 }
 </script>
+
