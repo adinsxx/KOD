@@ -1,16 +1,16 @@
 <template>
   <div>
     <breadcrumbs></breadcrumbs>
-    <v-app>
+
       <v-form>
         <v-select :items="items"
                   label="Choose a Class"
         >
         </v-select>
+        <v-btn @click="() => {next(); persist();}">Next</v-btn>
+
       </v-form>
 
-    </v-app>
-    <v-btn @click="() => {next; persist;}">Next</v-btn>
 
   </div>
 </template>

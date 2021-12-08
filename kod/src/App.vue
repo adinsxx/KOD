@@ -4,7 +4,10 @@
     <!--      <router-link to="/">Home</router-link> |-->
     <!--      <router-link to="/login">Login</router-link>-->
     <!--    </div>-->
-    <router-view :authUser="authUser" :new-character-sheet="newCharacterSheet"/>
+    <v-app>
+      <router-view :authUser="authUser" :new-character-sheet="newCharacterSheet"/>
+
+    </v-app>
 
 
   </div>
