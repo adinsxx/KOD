@@ -1,14 +1,16 @@
 <template>
   <div>
     <breadcrumbs></breadcrumbs>
-    <user-select></user-select>
+    <v-form>
+      <user-select></user-select>
+      <v-btn @click="next">Next</v-btn>
+    </v-form>
 
   </div>
 
 </template>
 
 <script>
-import axios from "axios";
 
 import Breadcrumbs from "../../components/Breadcrumbs";
 import UserSelect from "../../components/DRY-Killers/UserSelect";
@@ -19,10 +21,13 @@ export default {
   props:{
     newCharacterSheet: Object
   },
-  mounted(){
-    axios
-        .get('https://www.dnd5eapi.co/api/equipment-categories/')
-        .then(response => (this.info = response.data.bpi))
+  methods: {
+    next() {
+      this.$router.push('/character-creator/description')
+    },
+    persist(){
+      localStorage.items = this.items;
+    }
   },
   data: () => ({
     items: ['Foo', 'Bar', 'Fizz', 'Buzz'],

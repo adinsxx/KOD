@@ -1,12 +1,14 @@
 <template>
-<div>
-  <breadcrumbs></breadcrumbs>
-  <user-input></user-input>
-</div>
+  <div>
+    <breadcrumbs></breadcrumbs>
+    <v-form>
+      <user-input></user-input>
+      <v-btn @click="next">Next</v-btn>
+    </v-form>
+  </div>
 </template>
 
 <script>
-import axios from "axios";
 import UserInput from "../../components/DRY-Killers/UserInput";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
@@ -16,11 +18,14 @@ export default {
   props:{
     newCharacterSheet: Object
   },
-  mounted(){
-    axios
-        .get('https://www.dnd5eapi.co/api/proficiencies/')
-        .then(response => (this.info = response.data.bpi))
-  }
+  methods: {
+    next() {
+      this.$router.push('/character-creator/options')
+    },
+    persist(){
+      localStorage.items = this.items;
+    }
+  },
 }
 </script>
 

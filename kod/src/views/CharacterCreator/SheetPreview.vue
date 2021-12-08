@@ -1,17 +1,12 @@
 <template>
 <div>
   <breadcrumbs></breadcrumbs>
-  <input v-model="newCharacterSheet.name">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <input v-model="newCharacterSheet.className">
-  <h1>Its a sheet preview</h1>
+  <v-form>
+    <h1>Its a sheet preview</h1>
+  <v-btn>Save</v-btn>
+  </v-form>
+
+
 </div>
 </template>
 
@@ -23,7 +18,13 @@ export default {
   components: {Breadcrumbs},
   props:{
     newCharacterSheet: Object
+  },
+  methods: {
+    persist() {
+      localStorage.items = this.items;
+    }
   }
+
 }
 </script>
 

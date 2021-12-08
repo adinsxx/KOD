@@ -13,8 +13,7 @@
       <v-col
           md="1"
           offset-md="1">
-        <v-btn v-if="authUser" class="text-decoration-none" @click.prevent="logout">Logout</v-btn>
-        <v-btn v-else class="text-decoration-none" @click.prevent="login">Login</v-btn>
+        <v-btn v-if="authUser" class="text-decoration-none" @click.prevent="login">Login</v-btn>
 
       </v-col>
     </v-row>
@@ -56,5 +55,8 @@ export default {
 </script>
 
 <style scoped>
-
+.parent {
+  position: center
+;
+}
 </style>

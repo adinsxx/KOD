@@ -1,35 +1,81 @@
 <template>
   <div>
     <breadcrumbs></breadcrumbs>
-    <user-select v-for="race of info">
-      {{race.name}}
-    </user-select>
+    <v-app>
+    <v-form>
+        <v-select :items="items"
+                  label="Choose a Race"
+        >
+        </v-select>
+    </v-form>
+    </v-app>
+    <v-btn @click="() => {next; persist;}">Next</v-btn>
 
   </div>
 </template>
 
 <script>
-
-
-import UserSelect from "../../components/DRY-Killers/UserSelect";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import axios from "axios";
 
 export default {
 
   name: "Race",
   data: () => ({
-    info: []
+    items: [
+      "Aarakocra",
+      "Aasimar",
+      "Bugbear",
+      "Centaur",
+      "Changeling",
+      "Dhampir",
+      "Dragonborn",
+      "Dwarf",
+      "Elf",
+      "Firbolg",
+      "Genasi",
+      "Gith",
+      "Gnome",
+      "Goblin",
+      "Goliath",
+      "Grung",
+      "Halfling",
+      "Half-Elf",
+      "Half-Orc",
+      "Hexblood",
+      "Hobgoblin",
+      "Human",
+      "Kalashtar",
+      "Kenku",
+      "Kobold",
+      "Leonin",
+      "Lizardfolk",
+      "Locathah",
+      "Loxodon",
+      "Minotaur",
+      "Orc",
+      "Reborn",
+      "Satyr",
+      "Shifter",
+      "Simic Hybrid",
+      "Tabaxi",
+      "Tiefling",
+      "Tortle",
+      "Triton",
+      "Vedalken",
+      "Verdan",
+      "Warforged",
+      "Yuan-Ti Pureblood",
+    ],
   }),
-  components: {UserSelect, Breadcrumbs},
-  props:{
-    newCharacterSheet: Object,
+  components: {Breadcrumbs},
+  methods: {
+    next() {
+      this.$router.push('/character-creator/class')
+    },
+    persist() {
+      localStorage.items = this.items;
+    }
   },
-  created() {
-    axios
-    .get("https://www.dnd5eapi.co/api/races")
-    .then(response => (this.info = response))
-  }
 
 
 }

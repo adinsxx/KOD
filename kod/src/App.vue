@@ -1,5 +1,5 @@
 <template>
-  <div id="app"  class="container--fluid">
+  <div id="app"  class="container-md">
     <!--    <div id="nav">-->
     <!--      <router-link to="/">Home</router-link> |-->
     <!--      <router-link to="/login">Login</router-link>-->

@@ -1,23 +1,26 @@
 <template>
   <div>
     <breadcrumbs></breadcrumbs>
-    <user-input></user-input>
-    <user-select></user-select>
+    <v-form>
+      <v-select label="Choose a Background"
+      ></v-select>
+      <v-textarea name="input-7-4"
+      ></v-textarea>
+      <v-btn @click="next">Next</v-btn>
+    </v-form>
 
   </div>
 
 </template>
 
 <script>
-import axios from "axios";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import UserInput from "../../components/DRY-Killers/UserSelect";
-import UserSelect from "../../components/DRY-Killers/UserInput";
+
 
 
 export default {
   name: "Background",
-  components: {UserSelect, UserInput, Breadcrumbs},
+  components: {Breadcrumbs},
   props:{
     newCharacterSheet: Object
   },
@@ -26,10 +29,14 @@ export default {
       info: null
     }
   },
-  mounted(){
-    axios
-        .get('https://www.dnd5eapi.co/api/background/')
-        .then(response => (this.info = response.data.bpi))
+
+  methods:{
+    next(){
+      this.$router.push('/character-creator/ability-scores')
+    },
+    persist(){
+      localStorage.items = this.items;
+    }
   }
 }
 </script>
