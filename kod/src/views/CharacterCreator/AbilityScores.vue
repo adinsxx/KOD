@@ -21,7 +21,10 @@ export default {
   },
 
   data: () => ({
-    items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+    items: [
+      //define pre-set stats with base values
+        //i.e. str: 15, dex: 12, con: 10
+    ],
   }),
 
   methods:{

@@ -7,7 +7,7 @@ function CharacterSheet(name, className, subclassName, raceName, subrace, backgr
   this.raceName = raceName || '';
   this.subrace = subrace || '';
   this.background = background || '';
-  this.abilityScores = abilityScores || 0;
+  this.abilityScores = abilityScores || 0 ;
   this.proficiences = proficiencies || '';
   this.options = options || '';
   this.spells = spells || '';
