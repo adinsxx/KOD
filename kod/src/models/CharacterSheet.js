@@ -1,6 +1,7 @@
 //information to fill out the character sheet
 
-function CharacterSheet(name, className, subclassName, raceName, subrace, background, abilityScores, proficiencies, options, spells, equipment, description){
+function CharacterSheet(user, name, className, subclassName, raceName, subrace, background, abilityScores, proficiencies, options, spells, equipment, description){
+  this.user = user || { };
   this.name = name || '';
   this.className = className || '';
   this.subclassName = subclassName || '';
@@ -17,6 +18,7 @@ function CharacterSheet(name, className, subclassName, raceName, subrace, backgr
 
   this.toFirestore = function(){
     return {
+      user: this.user,
       name: this.name,
       className: this.className,
       subclassName: this.subclassName,
@@ -40,6 +42,7 @@ CharacterSheet.collectionName = 'sheets';
 CharacterSheet.fromFirestore = function (snapshot, option){
   const data = snapshot.data(option);
   return new CharacterSheet(
+      data.user,
       data.name,
       data.className,
       data.subclassName,

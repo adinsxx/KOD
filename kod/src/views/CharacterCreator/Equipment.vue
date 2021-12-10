@@ -27,6 +27,7 @@ export default {
     },
   },
   data: () => ({
+    //TODO add equipment data
     items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
   }),
 }

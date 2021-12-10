@@ -22,7 +22,7 @@ export default {
 
   data: () => ({
     items: [
-      //define pre-set stats with base values
+      //TODO define pre-set stats with base values
         //i.e. str: 15, dex: 12, con: 10
     ],
   }),
