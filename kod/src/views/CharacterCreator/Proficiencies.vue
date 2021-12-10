@@ -2,7 +2,7 @@
   <div>
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <v-textarea v-model="newCharacterSheet.proficiences"></v-textarea>
+      <v-textarea name="input-7-4" v-model="newCharacterSheet.proficiences" label="Write a proficiency"></v-textarea>
       <v-btn @click="next">Next</v-btn>
     </v-form>
   </div>

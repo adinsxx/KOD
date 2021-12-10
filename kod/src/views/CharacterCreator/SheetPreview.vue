@@ -1,8 +1,8 @@
 <template>
 <div>
   <breadcrumbs></breadcrumbs>
-  <v-form>
-  {{newCharacterSheet.name}}
+  <v-form >
+<!--  {{newCharacterSheet.name}}-->
     {{newCharacterSheet.raceName}}
     {{newCharacterSheet.background}}
     {{newCharacterSheet.abilityScores}}
@@ -10,7 +10,8 @@
     {{newCharacterSheet.options}}
     {{newCharacterSheet.spells}}
     {{newCharacterSheet.equipment}}
-  <v-btn>Save</v-btn>
+    {{newCharacterSheet.description}}
+  <v-btn @click.prevent="addCharacter">Save</v-btn>
   </v-form>
 
 
@@ -20,6 +21,7 @@
 <script>
 import Breadcrumbs from "../../components/Breadcrumbs";
 import {db} from "../../firebase/firebase";
+import CharacterSheet from "../../models/CharacterSheet";
 
 export default {
   name: "SheetPreview",
@@ -33,12 +35,25 @@ export default {
     authUser: Object,
     newCharacterSheet: Object
   },
-  created(){
-    db.collection('Characters').onSnapshot(()=> {
-      this.Characters.push({
+  methods: {
+    addCharacter(){
+      let theCharacter = this.newCharacterSheet;
 
-      })
-    })
+      theCharacter.user = (this.authUser);
+      console.log(theCharacter.toFirestore())
+      console.log(this.authUser)
+      db.collection('characters')
+          .add(theCharacter.toFirestore())
+          .then(function (docRef) {
+              console.log("Sheet added: ", docRef);
+
+              theCharacter = new CharacterSheet();
+          })
+          .catch(function(error) {
+            console.error("Error adding sheet: ", error)
+          });
+
+    }
   }
 
 }

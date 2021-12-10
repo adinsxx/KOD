@@ -52,7 +52,7 @@
 
     <!--    Carousel-->
 
-    <v-carousel cycle height="800" hide-delimiters>
+    <v-carousel cycle height="600" hide-delimiters>
       <v-carousel-item
           v-for="(item,i) in items"
           :key="i"

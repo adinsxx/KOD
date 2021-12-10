@@ -1,33 +1,34 @@
 //information to fill out the character sheet
-function CharacterSheet(name,className, subclassName, race, subrace, background, abilityScores, proficiencies, options, spells, equipment, description){
-  this.name = name || 'Character Name';
-  this.className = className || 'Class Name';
-  this.subclassName = subclassName || 'Subclass Name';
-  this.raceName = race || 'Race Name';
-  this.subrace = subrace || 'Sub-Race Name';
-  this.background = background || 'Character Background';
-  this.abilityScores = abilityScores || 8 ;
-  this.proficiences = proficiencies || 'Proficiencies';
-  this.options = options || 'Options';
-  this.spells = spells || 'Spells';
-  this.equipment = equipment || 'Equipment';
-  this.description = description || 'Description';
+
+function CharacterSheet(name, className, subclassName, raceName, subrace, background, abilityScores, proficiencies, options, spells, equipment, description){
+  this.name = name || '';
+  this.className = className || '';
+  this.subclassName = subclassName || '';
+  this.raceName = raceName || '';
+  this.subrace = subrace || '';
+  this.background = background || '';
+  this.abilityScores = abilityScores || 0;
+  this.proficiences = proficiencies || '';
+  this.options = options || '';
+  this.spells = spells || '';
+  this.equipment = equipment || '';
+  this.description = description || '';
 
 
   this.toFirestore = function(){
     return {
-      name: this.name = name,
-      className: this.className = className,
-      subclassName: this.subclassName = subclassName,
-      race: this.race = race,
-      subrace: this.subrace = subrace,
-      background: this.background = background,
-      abilityScores: this.abilityScores = abilityScores,
-      proficiences: this.proficiences = proficiencies,
-      options: this.options = options,
-      spells: this.spells = spells,
-      equipment: this.equipment = equipment,
-      description: this.description = description,
+      name: this.name,
+      className: this.className,
+      subclassName: this.subclassName,
+      raceName: this.raceName,
+      subrace: this.subrace,
+      background: this.background,
+      abilityScores: this.abilityScores,
+      proficiences: this.proficiences,
+      options: this.options,
+      spells: this.spells,
+      equipment: this.equipment,
+      description: this.description,
 
 
     }
@@ -42,7 +43,7 @@ CharacterSheet.fromFirestore = function (snapshot, option){
       data.name,
       data.className,
       data.subclassName,
-      data.race,
+      data.raceName,
       data.subrace,
       data.background,
       data.abilityScores,
@@ -52,6 +53,8 @@ CharacterSheet.fromFirestore = function (snapshot, option){
       data.equipment,
       data.description
   );
+
+
 }
 
 export default CharacterSheet;
