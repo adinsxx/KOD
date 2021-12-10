@@ -2,7 +2,14 @@
 <div>
   <breadcrumbs></breadcrumbs>
   <v-form>
-    <h1>Its a sheet preview</h1>
+  {{newCharacterSheet.name}}
+    {{newCharacterSheet.raceName}}
+    {{newCharacterSheet.background}}
+    {{newCharacterSheet.abilityScores}}
+    {{newCharacterSheet.proficiences}}
+    {{newCharacterSheet.options}}
+    {{newCharacterSheet.spells}}
+    {{newCharacterSheet.equipment}}
   <v-btn>Save</v-btn>
   </v-form>
 
@@ -12,17 +19,26 @@
 
 <script>
 import Breadcrumbs from "../../components/Breadcrumbs";
+import {db} from "../../firebase/firebase";
 
 export default {
   name: "SheetPreview",
+  data() {
+    return {
+      Characters: []
+    }
+  },
   components: {Breadcrumbs},
-  props:{
+  props: {
+    authUser: Object,
     newCharacterSheet: Object
   },
-  methods: {
-    persist() {
-      localStorage.items = this.items;
-    }
+  created(){
+    db.collection('Characters').onSnapshot(()=> {
+      this.Characters.push({
+
+      })
+    })
   }
 
 }

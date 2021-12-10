@@ -2,29 +2,26 @@
   <div>
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <user-input></user-input>
+      <v-textarea v-model="newCharacterSheet.proficiences"></v-textarea>
       <v-btn @click="next">Next</v-btn>
     </v-form>
   </div>
 </template>
 
 <script>
-import UserInput from "../../components/DRY-Killers/UserInput";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default {
   name: "Proficiencies",
-  components: {UserInput, Breadcrumbs},
-  props:{
+  components: {Breadcrumbs},
+  props: {
+    authUser: Object,
     newCharacterSheet: Object
   },
   methods: {
     next() {
       this.$router.push('/character-creator/options')
     },
-    persist(){
-      localStorage.items = this.items;
-    }
   },
 }
 </script>

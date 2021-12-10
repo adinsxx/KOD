@@ -3,7 +3,7 @@ function CharacterSheet(name,className, subclassName, race, subrace, background,
   this.name = name || 'Character Name';
   this.className = className || 'Class Name';
   this.subclassName = subclassName || 'Subclass Name';
-  this.race = race || 'Race Name';
+  this.raceName = race || 'Race Name';
   this.subrace = subrace || 'Sub-Race Name';
   this.background = background || 'Character Background';
   this.abilityScores = abilityScores || 8 ;

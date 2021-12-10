@@ -1,14 +1,5 @@
 <template>
-  <div id="homepage">
-
-    <!--    <b-navbar toggleable="sm" type="dark" variant="dark">-->
-    <!--      <b-collapse id="nav-text-collapse" is-nav>-->
-    <!--        <b-nav fill>-->
-    <!--          <b-nav-item right to="/login" exact exact-active-class="active">User login</b-nav-item>-->
-    <!--          <b-nav-item right to="/wiki" exact exact-active-class="active">Resources Hub</b-nav-item>-->
-    <!--        </b-nav>-->
-    <!--      </b-collapse>-->
-    <!--    </b-navbar>-->
+  <div>
     <v-app-bar
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
@@ -60,48 +51,21 @@
     <!--    https://stackoverflow.com/questions/59415526/vuetify-v-carousel-arrows-overlapping-problem-->
 
     <!--    Carousel-->
-    <v-app>
 
-      <v-carousel cycle height="800" hide-delimiters>
-        <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
-        >
-        </v-carousel-item>
+    <v-carousel cycle height="800" hide-delimiters>
+      <v-carousel-item
+          v-for="(item,i) in items"
+          :key="i"
+          :src="item.src"
+      >
+      </v-carousel-item>
 
-      </v-carousel>
-    </v-app>
+    </v-carousel>
     <!--  buttons-->
-
-    <login-page auth-user="authUser"></login-page>
-
-
-
-    <b-card-footer>
-      Its a footer
-    </b-card-footer>
+    <login-page :auth-user="authUser"></login-page>
 
   </div>
-
-
 </template>
-<style scoped>
-
-#homepage {
-  text-align: center;
-
-  background-color: white;
-}
-
-
-
-
-
-
-
-</style>
-
 
 <script>
 
@@ -109,38 +73,41 @@ import LoginPage from "./LoginPage";
 
 export default {
   name: "HomePage",
-  components:{
-    LoginPage,
+  components: {LoginPage},
+  props: {
+    authUser: Object,
+    newCharacterSheet: Object
   },
-
-  data: () => ({
-    slide: 0,
-    sliding: null,
-    drawer: false,
-    group: null,
-    items: [
-      {
-        src: 'https://cdnb.artstation.com/p/assets/images/images/013/521/391/4k/emmanuel-shiu-human-relm-002.jpg?1539970395'
-      },
-      {
-        src: 'https://cdna.artstation.com/p/assets/images/images/001/206/348/4k/david-edwards-kenden-001.jpg?1442195813'
-      },
-      {
-        src: 'https://cdna.artstation.com/p/assets/images/images/002/352/926/4k/zsolt-kuczora-landscape-redesign-from-2013.jpg?1460651959'
-      }
-
-
-    ],
-    email: '',
-    password: '',
-    absolute: true,
-    opacity: 0,
-    overlay: true,
+  data () {
+    return {
+      characters: [],
+      slide: 0,
+      sliding: null,
+      drawer: false,
+      group: null,
+      items: [
+        {
+          src: 'https://cdnb.artstation.com/p/assets/images/images/013/521/391/4k/emmanuel-shiu-human-relm-002.jpg?1539970395'
+        },
+        {
+          src: 'https://cdna.artstation.com/p/assets/images/images/001/206/348/4k/david-edwards-kenden-001.jpg?1442195813'
+        },
+        {
+          src: 'https://cdna.artstation.com/p/assets/images/images/002/352/926/4k/zsolt-kuczora-landscape-redesign-from-2013.jpg?1460651959'
+        }
 
 
-  }),
-
-
+      ],
+      email: '',
+      password: '',
+      absolute: true,
+      opacity: 0,
+      overlay: true,
+    }
+  },
 }
 </script>
 
+<style scoped>
+
+</style>

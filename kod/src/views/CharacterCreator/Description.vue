@@ -2,7 +2,7 @@
   <div>
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <user-input></user-input>
+      <v-textarea v-model="newCharacterSheet.description"></v-textarea>
       <v-btn @click="next">Next</v-btn>
     </v-form>
   </div>
@@ -11,22 +11,19 @@
 
 <script>
 
-import UserInput from "../../components/DRY-Killers/UserInput";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default {
   name: "Description",
-  components: {UserInput, Breadcrumbs},
-  props:{
+  components: {Breadcrumbs},
+  props: {
+    authUser: Object,
     newCharacterSheet: Object
   },
   methods: {
     next() {
       this.$router.push('/character-creator/sheet-preview')
     },
-    persist(){
-      localStorage.items = this.items;
-    }
   }
 }
 </script>

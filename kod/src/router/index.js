@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomePage from "../views/Webpage/HomePage";
 import ProfilePage from "../views/Webpage/ProfilePage";
 import ResourceWiki from "../views/Webpage/ResourceWiki";
 import Race from "../views/CharacterCreator/Race";
@@ -13,6 +12,7 @@ import KnownSpells from "../views/CharacterCreator/KnownSpells";
 import Equipment from "../views/CharacterCreator/Equipment";
 import Description from "../views/CharacterCreator/Description";
 import SheetPreview from "../views/CharacterCreator/SheetPreview";
+import HomePage from "../views/Webpage/HomePage";
 
 Vue.use(VueRouter)
 
@@ -42,11 +42,7 @@ const routes = [
     name: 'Class',
     component: Class,
   },
-  {
-    path: '/character-creator/race',
-    name: 'Race',
-    component: Race,
-  },
+
   {
     path: '/character-creator/background',
     name: 'Background',

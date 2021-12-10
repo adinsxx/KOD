@@ -3,11 +3,11 @@
     <breadcrumbs></breadcrumbs>
 
       <v-form>
-        <v-select :items="items"
+        <v-select v-model="newCharacterSheet.className" :items="items"
                   label="Choose a Class"
         >
         </v-select>
-        <v-btn @click="() => {next(); persist();}">Next</v-btn>
+        <v-btn @click="() => {next();}">Next</v-btn>
 
       </v-form>
 
@@ -23,7 +23,8 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 export default {
   name: "Class",
   components: {Breadcrumbs},
-  props:{
+  props: {
+    authUser: Object,
     newCharacterSheet: Object
   },
   data: () => ({
@@ -49,9 +50,6 @@ export default {
     next(){
       this.$router.push('/character-creator/background')
     },
-    persist(){
-      localStorage.items = this.items;
-    }
   }
 }
 </script>

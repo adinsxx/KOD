@@ -1,15 +1,14 @@
 <template>
   <div>
     <breadcrumbs></breadcrumbs>
-    <v-app>
     <v-form>
-        <v-select :items="items"
+        <v-select v-model="newCharacterSheet.raceName" :items="items"
                   label="Choose a Race"
         >
         </v-select>
     </v-form>
-    </v-app>
-    <v-btn @click="() => {next; persist;}">Next</v-btn>
+
+    <v-btn @click="() => {next();}">Next</v-btn>
 
   </div>
 </template>
@@ -68,13 +67,14 @@ export default {
     ],
   }),
   components: {Breadcrumbs},
+  props: {
+    authUser: Object,
+    newCharacterSheet: Object
+  },
   methods: {
     next() {
       this.$router.push('/character-creator/class')
     },
-    persist() {
-      localStorage.items = this.items;
-    }
   },
 
 

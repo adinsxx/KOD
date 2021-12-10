@@ -1,4 +1,4 @@
-var User = function(firebaseUser){
+export const User = function(firebaseUser){
     let m = {
         displayName: '',
         email: '',
