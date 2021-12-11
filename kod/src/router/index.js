@@ -13,6 +13,7 @@ import Equipment from "../views/CharacterCreator/Equipment";
 import Description from "../views/CharacterCreator/Description";
 import SheetPreview from "../views/CharacterCreator/SheetPreview";
 import HomePage from "../views/Webpage/HomePage";
+import SheetPage from "../views/Webpage/SheetPage";
 
 Vue.use(VueRouter)
 
@@ -83,6 +84,11 @@ const routes = [
     name: 'SheetPreview',
     component: SheetPreview,
   },
+  {
+    path: '/sheet-pages',
+    name: 'SheetPage',
+    component: SheetPage
+  }
 
 
 

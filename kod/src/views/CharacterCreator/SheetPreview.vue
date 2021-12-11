@@ -4,6 +4,7 @@
   <v-form >
 <!--  {{newCharacterSheet.name}}-->
     {{newCharacterSheet.raceName}}
+    {{newCharacterSheet.className}}
     {{newCharacterSheet.background}}
     {{newCharacterSheet.abilityScores}}
     {{newCharacterSheet.proficiences}}
@@ -33,7 +34,7 @@ export default {
   components: {Breadcrumbs},
   props: {
     authUser: Object,
-    newCharacterSheet: Object
+    newCharacterSheet: Object,
   },
   methods: {
     addCharacter(){

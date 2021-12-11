@@ -42,6 +42,17 @@
               </router-link>
             </v-list-item-title>
           </v-list-item>
+
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon></v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>
+              <router-link to="/sheet-pages" class="text-decoration-none">
+                Character Inspiration
+              </router-link>
+            </v-list-item-title>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
