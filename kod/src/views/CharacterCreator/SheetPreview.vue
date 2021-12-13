@@ -22,7 +22,7 @@
 
 
 
-  <v-btn @click.prevent="addCharacter">Save</v-btn>
+<v-btn @click.prevent="addCharacter">Save</v-btn>
   </v-form>
 
 
