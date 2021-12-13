@@ -2,10 +2,8 @@
   <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <v-select v-model="newCharacterSheet.background" label="Choose a Background"
+      <v-select v-model="newCharacterSheet.background" :items="items" label="Choose a Background"
       ></v-select>
-      <v-textarea name="input-7-4"
-      ></v-textarea>
       <v-btn @click="next">Next</v-btn>
     </v-form>
 
@@ -27,7 +25,8 @@ export default {
   },
   data(){
     return {
-      info: null
+      info: null,
+      items: ['Criminal', 'Acolyte ', 'Entertainer', 'Knight', 'Soldier', 'Pirate']
     }
   },
 

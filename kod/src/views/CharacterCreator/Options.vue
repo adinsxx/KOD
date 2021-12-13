@@ -2,7 +2,7 @@
   <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <v-textarea v-model="newCharacterSheet.options"></v-textarea>
+      <v-select v-model="newCharacterSheet.options" label="Choose a Pack"  :items="items"></v-select>
       <v-btn @click="next">Next</v-btn>
     </v-form>
   </div>
@@ -23,6 +23,10 @@ export default {
       this.$router.push('/character-creator/spells')
     },
   },
+  data: () => ({
+    //TODO add equipment data
+    items: ['Adventurers Pack', 'Explorers Pack', 'Scholars Pack'],
+  }),
 
 }
 </script>

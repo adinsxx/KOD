@@ -2,8 +2,8 @@
   <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <v-input v-model="newCharacterSheet.name"></v-input>
-      <v-textarea v-model="newCharacterSheet.description"></v-textarea>
+      <v-text-field v-model="newCharacterSheet.name" label="Name your character"></v-text-field>
+      <v-textarea v-model="newCharacterSheet.description" label="Give your character some fun details"></v-textarea>
       <v-btn @click="next">Next</v-btn>
     </v-form>
   </div>

@@ -1,32 +1,24 @@
 <template>
-<div class="characterForm">
-  <breadcrumbs></breadcrumbs>
-  <v-form>
-    <p>    {{newCharacterSheet.name}}</p>
-    <p>    {{newCharacterSheet.raceName}}</p>
-    <p>  {{newCharacterSheet.className}}</p>
-    <p>    {{newCharacterSheet.background}}</p>
-    <p>    {{newCharacterSheet.abilityScores}}</p>
-    <p>    {{newCharacterSheet.proficiences}}</p>
-    <p>    {{newCharacterSheet.options}}</p>
-    <p>    {{newCharacterSheet.spells}}</p>
-    <p>    {{newCharacterSheet.equipment}}</p>
-    <p>    {{newCharacterSheet.description}}</p>
+  <div class="characterForm">
+    <breadcrumbs></breadcrumbs>
+    <v-form>
+      <p>  Name:  {{newCharacterSheet.name}}</p>
+      <p>   Race: {{newCharacterSheet.raceName}}</p>
+      <p>  Class: {{newCharacterSheet.className}}</p>
+      <p>    Background: {{newCharacterSheet.background}}</p>
+      <p>    Ability Scores: {{newCharacterSheet.abilityScores}}</p>
+      <p>    Proficiencies: {{newCharacterSheet.proficiences}}</p>
+      <p>    Options: {{newCharacterSheet.options}}</p>
+      <p>    Spells: {{newCharacterSheet.spells}}</p>
+      <p>    Equipment: {{newCharacterSheet.equipment}}</p>
+      <p>    Description: {{newCharacterSheet.description}}</p>
+
+      <v-btn @click.prevent="addCharacter">Save</v-btn>
+      <v-btn @click.prevent="toSheets">My Sheets</v-btn>
+    </v-form>
 
 
-
-
-
-
-
-
-
-
-<v-btn @click.prevent="addCharacter">Save</v-btn>
-  </v-form>
-
-
-</div>
+  </div>
 </template>
 
 <script>
@@ -56,14 +48,17 @@ export default {
       db.collection('characters')
           .add(theCharacter.toFirestore())
           .then(function (docRef) {
-              console.log("Sheet added: ", docRef);
+            console.log("Sheet added: ", docRef);
 
-              theCharacter = new CharacterSheet();
+            theCharacter = new CharacterSheet();
           })
           .catch(function(error) {
             console.error("Error adding sheet: ", error)
           });
 
+    },
+    toSheets(){
+      this.$router.push('/sheet-pages')
     }
   }
 
@@ -73,6 +68,6 @@ export default {
 <style scoped>
 .characterForm
 {
-   margin: 30px;
- }
+  margin: 30px;
+}
 </style>

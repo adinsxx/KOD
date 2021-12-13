@@ -2,7 +2,7 @@
   <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <v-select v-model="newCharacterSheet.spells"></v-select>
+      <v-select v-model="newCharacterSheet.spells" :items="items" label="Choose a spell"></v-select>
       <v-btn @click="next">Next</v-btn>
     </v-form>
   </div>
@@ -21,9 +21,12 @@ export default {
   methods: {
     next() {
       this.$router.push('/character-creator/equipment')
-    },
-
-  }
+    }
+  },
+  data: () => ({
+    //TODO add equipment data
+    items: ['None', 'Spare the Dying', 'Firebolt', 'Shocking Grasp', 'Magic Missile', 'Turn Undead'],
+  }),
 }
 </script>
 

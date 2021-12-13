@@ -2,7 +2,7 @@
   <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
-      <v-select v-model="newCharacterSheet.equipment"></v-select>
+      <v-select v-model="newCharacterSheet.equipment" :items="items" label="Choose your weapon"></v-select>
       <v-btn @click="next">Next</v-btn>
     </v-form>
 
@@ -28,7 +28,7 @@ export default {
   },
   data: () => ({
     //TODO add equipment data
-    items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+    items: ['Club', 'Mace', 'Axe', 'Sword', 'Bow', 'Unarmed'],
   }),
 }
 </script>
