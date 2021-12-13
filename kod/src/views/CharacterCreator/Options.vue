@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
       <v-textarea v-model="newCharacterSheet.options"></v-textarea>
@@ -28,5 +28,7 @@ export default {
 </script>
 
 <style scoped>
-
+.characterForm {
+  margin: 30px;
+}
 </style>

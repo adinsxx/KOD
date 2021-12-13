@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
         <v-select v-model="newCharacterSheet.raceName" :items="items"
@@ -82,5 +82,7 @@ export default {
 </script>
 
 <style scoped>
-
+.characterForm {
+  margin: 30px;
+}
 </style>

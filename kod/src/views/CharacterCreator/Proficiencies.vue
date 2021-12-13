@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="characterForm">
     <breadcrumbs></breadcrumbs>
     <v-form>
       <v-textarea name="input-7-4" v-model="newCharacterSheet.proficiences" label="Write a proficiency"></v-textarea>
@@ -27,5 +27,7 @@ export default {
 </script>
 
 <style scoped>
-
+.characterForm {
+  margin: 30px;
+}
 </style>

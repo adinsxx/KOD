@@ -1,17 +1,27 @@
 <template>
-<div>
+<div class="characterForm">
   <breadcrumbs></breadcrumbs>
-  <v-form >
-    {{newCharacterSheet.name}}
-    {{newCharacterSheet.raceName}}
-    {{newCharacterSheet.className}}
-    {{newCharacterSheet.background}}
-    {{newCharacterSheet.abilityScores}}
-    {{newCharacterSheet.proficiences}}
-    {{newCharacterSheet.options}}
-    {{newCharacterSheet.spells}}
-    {{newCharacterSheet.equipment}}
-    {{newCharacterSheet.description}}
+  <v-form>
+    <p>    {{newCharacterSheet.name}}</p>
+    <p>    {{newCharacterSheet.raceName}}</p>
+    <p>  {{newCharacterSheet.className}}</p>
+    <p>    {{newCharacterSheet.background}}</p>
+    <p>    {{newCharacterSheet.abilityScores}}</p>
+    <p>    {{newCharacterSheet.proficiences}}</p>
+    <p>    {{newCharacterSheet.options}}</p>
+    <p>    {{newCharacterSheet.spells}}</p>
+    <p>    {{newCharacterSheet.equipment}}</p>
+    <p>    {{newCharacterSheet.description}}</p>
+
+
+
+
+
+
+
+
+
+
   <v-btn @click.prevent="addCharacter">Save</v-btn>
   </v-form>
 
@@ -61,5 +71,8 @@ export default {
 </script>
 
 <style scoped>
-
+.characterForm
+{
+   margin: 30px;
+ }
 </style>

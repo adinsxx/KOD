@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .characterForm{
-  margin: 30px;
+
 }
 
 </style>
