@@ -2,6 +2,7 @@
   <div>
     <breadcrumbs></breadcrumbs>
     <v-form>
+      <v-input v-model="newCharacterSheet.name"></v-input>
       <v-textarea v-model="newCharacterSheet.description"></v-textarea>
       <v-btn @click="next">Next</v-btn>
     </v-form>

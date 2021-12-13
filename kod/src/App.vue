@@ -72,10 +72,7 @@ export default {
 </script>
 
 <style>
-v-application {
-  max-height: 100vh;
 
-}
 
 
 </style>

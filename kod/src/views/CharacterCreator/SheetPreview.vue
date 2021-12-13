@@ -2,7 +2,7 @@
 <div>
   <breadcrumbs></breadcrumbs>
   <v-form >
-<!--  {{newCharacterSheet.name}}-->
+    {{newCharacterSheet.name}}
     {{newCharacterSheet.raceName}}
     {{newCharacterSheet.className}}
     {{newCharacterSheet.background}}

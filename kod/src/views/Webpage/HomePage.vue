@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <v-app-bar
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
@@ -45,11 +45,11 @@
 
           <v-list-item>
             <v-list-item-icon>
-              <v-icon></v-icon>
+              <v-icon>mdi-file</v-icon>
             </v-list-item-icon>
             <v-list-item-title>
               <router-link to="/sheet-pages" class="text-decoration-none">
-                Character Inspiration
+                My Sheets
               </router-link>
             </v-list-item-title>
           </v-list-item>
@@ -63,7 +63,7 @@
 
     <!--    Carousel-->
 
-    <v-carousel cycle height="600" hide-delimiters>
+    <v-carousel cycle height="750" hide-delimiters>
       <v-carousel-item
           v-for="(item,i) in items"
           :key="i"
@@ -120,5 +120,8 @@ export default {
 </script>
 
 <style scoped>
+#home{
+  position: center;
+}
 
 </style>
